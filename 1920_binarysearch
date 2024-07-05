@@ -1,0 +1,46 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+using namespace std;
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(NULL);
+
+    vector<int> v1, v2;
+    int n1, x1, n2, x2;
+
+    // Input for the first vector
+    cin >> n1;
+    for (int i = 0; i < n1; i++) {
+        cin >> x1;
+        v1.push_back(x1);
+    }
+
+    // Sort the first vector
+    sort(v1.begin(), v1.end());
+
+    // Input for the second vector
+    cin >> n2;
+    for (int i = 0; i < n2; i++) {
+        cin >> x2;
+        v2.push_back(x2);
+    }
+
+    for (int i = 0; i < n2; i++) {
+        bool found = binary_search(v1.begin(), v1.end(), v2[i]);
+        cout << found << "\n";
+    }
+  
+}
+
+
+
+
+
+---------------------------------------------------------------------------------
+input
+5
+4 1 5 2 3
+5
+1 3 7 9 5
